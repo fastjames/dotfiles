@@ -180,7 +180,7 @@ merge() {
 }
 
 alias gap="git add -p"
-alias gc="git commit -vS"
+alias gc="git commit -v"
 alias gd="git diff --no-ext-diff"
 alias gdc="gds"
 alias gds="git diff --staged --no-ext-diff"
