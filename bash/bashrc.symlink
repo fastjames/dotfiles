@@ -1,0 +1,53 @@
+# shortcut to this dotfiles path is $DOTHOME
+export DOTHOME=$HOME/.dotfiles
+
+# source folder that we can `scd [tab]` into
+export SOURCE_DIR=$HOME/src
+
+# all of our bash files
+# typeset -U config_files
+config_files=($DOTHOME/**/*.bash)
+
+# load the path files
+# for file in ${(M)config_files:#*/path.bash}
+# do
+#   source $file
+# done
+
+# load everything but the path and completion files
+# for file in ${${config_files:#*/path.bash}:#*/completion.bash}
+# for file in ${config_files:*/!(path|completion).bash}
+for file in `ls $DOTHOME/**/*.bash`
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+# autoload -U compinit
+# compinit
+
+# load every completion after autocomplete loads
+# for file in ${(M)config_files:#*/completion.zsh}
+# do
+#   source $file
+# done
+
+unset config_files
+
+# I want to use [ and ] damn it!
+# unsetopt nomatch
+
+# set cd autocompletion to commonly visited directories
+cdpath=(. ~ ~/src $SOURCE_DIR)
+
+# chruby!
+# osx location
+[[ ! -a /usr/local/opt/chruby/share/chruby/chruby.sh ]] || source /usr/local/opt/chruby/share/chruby/chruby.sh
+[[ ! -a /usr/local/opt/chruby/share/chruby/auto.sh ]] || source /usr/local/opt/chruby/share/chruby/auto.sh
+# ubuntu location
+[[ ! -a /usr/local/share/chruby/chruby.sh ]] || source /usr/local/share/chruby/chruby.sh
+[[ ! -a /usr/local/share/chruby/auto.sh ]] || source /usr/local/share/chruby/auto.sh
+
+# import local zsh customizations, if present
+brcl="$HOME/.bashrc.local"
+[[ ! -a $brcl ]] || source $brcl
