@@ -1,4 +1,4 @@
-for dir in /usr/local/bin "$DOTHOME/bin" .git/safe/../../bin .git/bin; do
+for dir in /usr/local/bin "$DOTHOME/bin" .git/safe/../../bin .git/bin "$HOME/.local/bin"; do
   case "$PATH:" in
     *:"$dir":*) PATH="`echo "$PATH"|sed -e "s#:$dir##"`" ;;
   esac
