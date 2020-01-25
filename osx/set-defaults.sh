@@ -41,7 +41,7 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable Resume system-wide
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+# defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Disable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
@@ -72,10 +72,10 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
