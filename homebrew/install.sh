@@ -17,7 +17,7 @@ fi
 ${BREW_COMMAND} update
 
 # Install homebrew 'essential' packages
-BREWS=(autoconf automake ccache cmake coreutils ctags-exuberant emacs gnupg markdown neovim ninja proctools redis ripgrep s3cmd sqlite tmux wget)
+BREWS=(autoconf automake ccache cmake coreutils ctags-exuberant emacs git gnupg markdown neovim ninja proctools redis ripgrep s3cmd sqlite tmux wget)
 for brew in ${BREWS[@]}; do
   ${BREW_COMMAND} list $brew > /dev/null 2>&1
   if [[ "$?" -eq "1" ]]; then
